@@ -13,9 +13,10 @@ def add_todo():
     print('todo = ', todo, type(todo))
 
 # To stop our web app we should to entered in Terminal next command: CTRL+C
-st.title("My Todo App")
-st.subheader("This is a subtitle (subheader) of my Todo App.")
-st.write("This App is to increase your productivity.")
+st.title("My Todo App")                                         # Заголовок - крупным жирным шрифтом
+st.subheader("This is a subtitle (subheader) of my Todo App.")  # Подзаголовок - средним полужирным шрифтом
+st.write("This App is to increase your <b>productivity</b>.", unsafe_allow_html=True)  # Текст мелким (обычным) шрифтом
+# где <b>...</b> вместе с аргументом unsafe_allow_html=True -> даёт жирный шрифт (bold font)
 
 for index, todo in enumerate(todos):
     checkbox = st.checkbox(todo, key=todo)
